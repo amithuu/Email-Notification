@@ -1,0 +1,161 @@
+Learn AWS:
+    used in : Compute, storage, network security, blockchain, machine learning, Ai, Robot development, video production
+
+
+what is client -server model: 
+        In computing, a client can be a web browser or desktop application that a person interacts with to make requests to computer servers. 
+            A server can be services, such as Amazon Elastic Compute Cloud (Amazon EC2) – a type of virtual server.
+
+
+** what is cloud computing: The on-demand delivery of IT-resources over the internet with pay-as-you-go pricing. **
+
+
+How does the scale of cloud computing help you to save costs?: 
+            **-> The aggregated cloud usage from a large number of customers results in lower pay-as-you-go prices
+
+
+-----------EC2: Amazon Elastic Cloud Compute------------
+
+EC2: uses: highly flexible , cost effective quick
+
+EC2 runs on a physical machine with the virtualization technology.
+
+Multitenancy :Sharing underlying hardware between virtual machines.
+
+
+Vertical Scaling: Where in here we can increase or decrease the size and no of CPUs as we needed.
+
+
+Types of instances available:
+
+        [Caas: Compute as a Service.]
+
+EC2 Instance Families:
+        : General Purpose
+        : Compute Optimized 
+        : Memory Optimized
+        : Accelerated computing
+        : Storage Optimized
+
+
+General Purpose: [balance of compute, memory, and networking resources]
+                                    : it has Balanced resources
+                                    : Diverse workloads
+use it for deploying or storing     : Web servers
+                                    : Code repository
+
+Compute Optimized: [which uses batch processing workload]
+        : Compute intensive tasks
+        : Gaming servers
+        : high performance computing
+        : Scientific modeling
+
+Memory Optimized : [workloads that process large datasets in memory, such as high-performance databases.]
+        : Memory Intensive tasks
+
+Accelerated computing: 
+        : Floating point number calculations
+        : Graphics processing
+        : data pattern matching
+        : utilize hardware accelerators
+
+Storage Optimized:[workloads that require high, sequential read and write access to large datasets on local storage.]
+        : High performance for locally stored data
+
+
+EC2 Instance Types:
+        :on-demand
+        :Savings plan
+        :Reserved instances
+        :Spot instances
+        :Dedicated hosts
+    
+    on-Demand:  only pay for the duration that your instance runs for
+    Savings plan: offers low prices on EC2 usage in exchange for a commitment to a consistent amount of usage measured in dollars per hour for a one or three-year term.
+            [ telling them i will use instance for some years i need to them to costs only for this much dollar.]
+    Reserved Instance: here we will reserve the instance for some years, where we can pay , 
+                            :when we commit for years on it and pay fully.
+                            :when we use we pay for it.
+                            :no pay at the beginning.
+    Spot Instance: here we use some spare instance, like some one used and not using now like that, 
+                        catch is : if aws needs that they can re claim it when they need.[provides a 2 min warning before re-claim ]
+    Dedicated Host: These are dedicated only for some usage purpose , where it cannot be shared to any one.
+
+
+
+Scalability ans Elasticity:
+    This tells how capacity as grow ans shrink based on business needs
+    
+Amazon EC2 Auto Scaling: which increases the number of resources needed for the time and degrades the resources we not in needed.
+
+----------Amazon Elastic Load Balancing--------------
+
+Network Balancing: When there is an increase in requests but all the request are hitting the same instance, although we have multiple instances 
+            : to solve this we have host which diverts the requests to the ideal instance based on their no of request they are holing.
+
+    ["Load Balancing" :  Ensuring that no single Amazon EC2 instance has to carry the full workload on its own.]
+
+Elastic Load Balancing: service that automatically distributes incoming application traffic across multiple resources, such as Amazon EC2 instances. 
+
+        : an load balancer acts as single point to contact to all the incoming traffic from which it spreads across the multiple instances and loads which have less traffic..
+
+
+--------- Amazon SQS [simple Queue Services] ---------------------
+
+messaging Queue: The basic idea behind this is 
+                when there are 2 applications if one sends request to another, if both are available then looks good,
+                if any one of those fails, then both of the applications fails[ this is called tightly coupled.]
+
+
+    SQS: To solve this we use SQS[lightly coupled] , where when a request is send from the client it stores in {sqs queue} and sends to to server and gets the response
+                : if server fail then , until the server is {up and running} the requests are being {queued in sqs}
+
+    SQS: it send messages and store messages in queue and receive messages between software components at any volume, without loosing any messages.
+
+    payload: Data contained within a message   [eg: a toy box with lots of toys, here the important data is toys inside the toy box soo, {message:toy box}{data: lots of toys} ] 
+
+
+----------- Amazon SNS [Simple Notification Service]-------------
+
+    SNS: its an channel for messages to be delivered.
+        : this can be { text message or a mobile push notification or an email message }
+
+
+---------Server Less Servers------------
+
+------Lambda: where you upload your code to the server and no need for managing anything, as you do in EC2..
+
+    Docker: if you are using docker's in EC2, then u need to manage the configuration's.
+
+---------Amazon EKS[ Elastic kubernetes Services ] or ECS[ Elastic Container Services ] --------
+        EKS or ECS: Which run's the docker services.
+
+        AWS Fargate: Where its a serverless service that manages all teh configurations for teh docker services..
+
+
+-------------- Key Differences ----------------
+
+EC2:
+    : If you need to host traditional applications.
+    : If needed full access on OS and configurations.
+
+Docker:
+    : If you want to run docker or kubernetes based workloads on AWS [containers==dockers or kubernetes]
+        : it has 2 tools EKS or ECS services to manage the containers
+                : docker == ECS
+                : kubernetes == EKS
+
+    : Then u need to choose platform that you want to run the containers on 
+        : On EC2 which you need to manage the configurations.
+        : On Fargate which is managed by AWS, a serverless Application.
+
+Lambda:
+    : if you need to run service oriented applications or event driven applications.
+    : And you don't need any access on the configurations on managing servers.
+    : Then use Lambda
+
+    : if you just need to focus on code and when ever the code runs or http request is triggered then u need to pay.
+    : No need of managing anything [ no instances no containers ]
+
+-------------- Key Differences ----------------
+

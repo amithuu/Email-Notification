@@ -1,0 +1,45 @@
+Which Amazon EC2 instance type is suitable for data warehousing applications?:
+    ans: Storage optimized [because of more data handling on local server]
+
+
+Which Amazon EC2 instance type balances compute, memory, and networking resources?
+    ans: General purpose [ as it balances the workloads]
+
+
+Which Amazon EC2 instance type is ideal for high-performance databases?
+    ans: Memory optimized [ as we need the performance to be faster ]
+
+
+Which Amazon EC2 instance type offers high-performance processors?
+    ans: Compute optimized [ as we need processors to be faster ]
+
+
+Which Amazon EC2 pricing option provides a discount when you specify a number of EC2 instances to run a specific OS, instance family and size, and tenancy in one Region?
+    ans:Standard Reserved Instances [ as it provides for single region]         [* for multiple region we can use "Convertible Reserved Instances"]
+
+
+Which Amazon EC2 pricing option provides a discount when you make an hourly spend commitment to an instance family and Region for a 1-year or 3-year term?
+    ans: EC2 Instance Savings Plans [ we get payed only for the hours we used]
+
+
+Which AWS service is the best choice for publishing messages to subscribers?
+    ans: Amazon Simple Notification Service (Amazon SNS)
+
+You want to use an Amazon EC2 instance for a batch processing workload. What would be the best Amazon EC2 instance type to use?
+    ans:Compute optimized [which uses batch processing workload]
+
+
+What are the contract length options for Amazon EC2 Reserved Instances? (Select TWO.)
+    ans: 1 and 3 years
+
+
+You have a workload that will run for a total of 6 months and can withstand interruptions. What would be the most cost-efficient Amazon EC2 purchasing option?
+    ans:Spot Instance [ as it can handle interruptions ]
+
+Which process is an example of Elastic Load Balancing?
+    ans: Ensuring that no single Amazon EC2 instance has to carry the full workload on its own
+
+
+You want to deploy and manage containerized applications. Which service should you use?
+    ans:Amazon Elastic Kubernetes Service (Amazon EKS)
+
