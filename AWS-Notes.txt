@@ -10,10 +10,6 @@ what is client -server model:
 ** what is cloud computing: The on-demand delivery of IT-resources over the internet with pay-as-you-go pricing. **
 
 
-How does the scale of cloud computing help you to save costs?: 
-            **-> The aggregated cloud usage from a large number of customers results in lower pay-as-you-go prices
-
-
 -----------EC2: Amazon Elastic Cloud Compute------------
 
 EC2: uses: highly flexible , cost effective quick
@@ -158,4 +154,153 @@ Lambda:
     : No need of managing anything [ no instances no containers ]
 
 -------------- Key Differences ----------------
+
+
+
+---------Amazon Global Regions-------------
+
+        : High availability and fault tolerance 
+   The 4 business factors to make the Region Decision:
+        : Compliance
+        : Proximity
+        : Feature Availability
+        : Pricing
+
+  Compliance: the region where your data centre needs to be based on requirements or the Company resides.
+
+  Proximity: Locating close to customer/client base.
+                : where our most of teh customers reside that region should be taken.
+
+                : if we have customer in india and our centre in china then its latency, so its necessary to be in india.
+                        : latency:The time it takes for data to be sent and received.
+  
+  Feature Availability: All the regions doesn't have al the features availability, so choosing teh region which holds our physical hardware needs is best choice .
+
+  Pricing: Each Region costs differently for the same features based on {TAX structure of that country}.
+
+        {Regions: In a Single Region we will have any availability Zones, where if one fails we can access the other Zone.}
+
+ ----Amazon CloudFront [CDS] [Content delivery Network]------
+        : this uses Edge location service.
+
+        : Keeping an cache or backup data in the near by Centre if your Main centre is Far Away.
+                eg:[if your centre is in Tokyo, and some of your customers are in Mumbai, 
+                        :then building a cache copy in mumbai for accessing and sending data with low latency and hight transfer speed ]
+
+-------- Amazon Outpost------------
+        : If you need the data centre to be build inside our office, then you use Outpost Service.
+
+
+
+-------AWS Service for interaction-------
+        :AWS Management Console
+        :AWS CLI
+        :AWS SDK
+        :other tools[AWS Elastic BeanStalk, AWS Elastic CLoudFormation]
+
+  AWS Management Console: it is good to use when ur leaning although u need to do all things Manually, where the Human error is there.
+
+  AWS CLI: a command line interface, using this we can create instance in a cod eof lines very quickly.
+
+  AWS SDK: a Software, using this we can talk to the AWS in their own language using programming.
+
+  AWS Elastic BeanStalk: a Tool which helps you to automate things just by providing the code and it manages all the other things.
+
+        :you provide code and configuration settings, and Elastic Beanstalk deploys the resources necessary to perform the following tasks:
+                : Adjust capacity
+                : Load balancing
+                : Automatic scaling
+                : Application health monitoring
+
+  AWS CloudFormation: a Tool which helps you to automate things just by providing the code and it manages all the other things.
+
+        : It determines the right operations to perform when managing your stack and rolls back changes automatically if it detects errors.
+        : Amazon CloudFront is a {content delivery service.}
+        : It uses a network of edge locations to cache content and deliver content to customers all over the world.
+
+
+--------Amazon Virtual Private Cloud [VPC] ------------
+        : Its your own private network in AWS
+        : We keep our EC2 instances , ELB inside this.
+        : Using VPC we can make our instances or resources use by public over internet or private no internet access.
+
+        : The public and private grouping of resources are known as subnets and they are ranges of IP addresses in your VPC. 
+  
+   If need to access EC2 inside VPC, we go thorugh these types 
+
+  Internet Gateway [IGW]:
+        : This is for Public Traffic,to let in and go out of the VPC.
+
+  Virtual Private Gateway [VPGW]:
+        : This ensures to allow only the Approved Network, like using VPN.
+
+  [the VPGW is good but we receive public traffic as well, which makes latency, to avoid this we have]
+
+ AWS Direct Connect [AWS DC]:
+        : this allows you to connect direct {Fibre connection from your Data centre --> AWS} 
+
+
+---------SUBNET----------
+
+        SUBNET: A Instance which is inside VPC, it might br Private or Public.
+
+-------- Network Hardening----------
+
+        The only reason to use Subnets inside the VPC is To control the access.
+
+        Packet: Messages from the Internet.
+
+  ----Network Access Control list[Network ACL]--- [stateless: it checks when coming in and going out]
+
+        : Every Packet that tries to pass the subnet will be check by ACL
+        : this ACL with check whether the packets has the permission to enter and leave the subnet, 
+                : based on by whom is was sent and for what. 
+
+  -----Security Group---- [stateful: it check when coming not {not} while going out]
+
+        : Every subnet has many EC2 instances, each instance will have its own ports to receive the message[packets]
+
+        : Every Instance will have its own security group.[by default all ports and all IPs are blocked]
+                :it can be modified to allow some ports [eg: https request]
+        : When the packet enters the subnet 
+                Security Group will check whether the packet has the permission to enter the instance or not. 
+        
+
+---------Key Differences------
+
+        ACL: check while coming in and going out 
+                : Acts as security for subnet
+                : {default allows in and out.}
+
+        Security Group: check only while coming in
+                : Acts as security for instance
+                : {default allows nothing.}
+
+
+
+                eg: we have 2 subnet s1 and inside s1 we have instance i1 and same for s2 and i2
+
+                step1   : when i1 wants to send message it will cross the i1 security group
+                        : when i1 tries to get out from s1, the acl with check the permission.approved then
+                        : messages tries to enter s2, where acl of s2 will check for permission, if approved then
+                        : message tries to enter i2, where i2 will check for permission from its i2 security group, if approved 
+                                : then message or packet is received..
+                
+                step2   : when coming back message will come out of i2 easily as no check at i2 security group for coming out,
+                        : but to come out from s2, acl will check again , if approved
+                        : then it tries to enter into i1, again acl will check the permission, if approved
+                        : then it tries to go inside i1, where i1 security group will check for incoming, if approved
+                                : then response is received.
+
+---------Key Differences------
+
+
+---------- Amazon Route 53 -----------
+        The translation of Domain name to IP address is done by DNS [www.aws.com -> 192.1.1.1]
+
+        : This service provides the Domain Name Services[DNS] for your application.
+                DNS: when customer enter www.aws.com but this link as its own IP address like 192.1.1.1, which is understood by computer,
+                        : this translation is done by DNS with the help of Route 53.
+
+        : we can buy the domain names in here itself.
 

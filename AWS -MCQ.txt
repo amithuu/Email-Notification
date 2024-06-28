@@ -1,3 +1,6 @@
+How does the scale of cloud computing help you to save costs?: 
+            **-> The aggregated cloud usage from a large number of customers results in lower pay-as-you-go prices
+
 Which Amazon EC2 instance type is suitable for data warehousing applications?:
     ans: Storage optimized [because of more data handling on local server]
 
@@ -42,4 +45,57 @@ Which process is an example of Elastic Load Balancing?
 
 You want to deploy and manage containerized applications. Which service should you use?
     ans:Amazon Elastic Kubernetes Service (Amazon EKS)
+
+Which statement best describes an Availability Zone?
+    ans: A single data center or group of data centers within a Region
+
+
+Which statement is TRUE for the AWS global infrastructure?
+    ans: A Region consists of three or more Availability Zones.
+
+
+Which factors should be considered when selecting a Region? (Select TWO.)
+    ans: Compliance with data governance and legal requirements and Proximity to your customers
+
+
+Which statement best describes Amazon CloudFront?
+    ans: A global content delivery service
+
+
+Which site does Amazon CloudFront use to cache copies of content for faster delivery to users at any location?
+    ans: Edge location
+
+
+Which action can you perform with AWS Outposts?
+    ans: Extend AWS infrastructure and services to different locations including your on-premises data center.
+
+
+Which statement best describes an AWS account’s default network access control list?
+    ans: It is stateless and allows all inbound and outbound traffic.[default == ACL]
+
+
+Which statement best describes DNS resolution?
+    ans: Translating a domain name to an IP address
+
+
+Your company has an application that uses Amazon EC2 instances to run the customer-facing website and Amazon RDS database instances to store customers’ personal information. How should the developer configure the VPC according to best practices?
+    ans: Place the Amazon EC2 instances in a public subnet and the Amazon RDS database instances in a private subnet.
+            [because customer has to access the site so it is in public and database has to be in private]
+
+
+Which component can be used to establish a private dedicated connection between your company’s data center and AWS?
+    ans: AWS Direct Connect [ using Fibre connection]
+
+
+Which statement best describes security groups?
+    ans: They are stateful and deny all inbound traffic by default.
+
+
+Which component is used to connect a VPC to the internet?
+    ans: Internet gateway [VPC -> Internet]
+
+
+Which service is used to manage the DNS records for domain names?
+    ans: Amazon Route 53 [ which takes part of all DNS services ]
+
 
