@@ -304,3 +304,231 @@ Lambda:
 
         : we can buy the domain names in here itself.
 
+
+
+----------DataBase and Storage------------
+
+        : When u launch the EC2, u will get the storage which is called {Instance Store Volumes}
+                : Which when u terminate and re-start the instance, the data in the Volumes will be lost.
+                        : Because the storage is connected with instance.
+        : To solve this we use EBS
+
+  ----Amazon Elastic Block Store [EBS] --------
+        : Here the EBS Volumes is connected Directly with the AWS Host, so it doesn't affect the Volumes when u terminate Instances.
+        
+         : EBS comes in different Sizes, based on 
+                : Size
+                : Type
+                : Configurations
+        : We attach it to the EC2 instance and configure the application.
+
+        : EBS provide To take the Incremental Backup's regularly called SnapShots.
+        
+
+  ------- Amazon Simple Storage Service [S3] -----------
+        
+        : its an storage service, which provides the unlimited data storage and retrieval.
+                : Storage data as objects
+                : Store objects in buckets  [ here storing file in hard disk is objects and storing file directories is bucket. ]
+                : Upload a max object size of 5TB.
+                : Version objects [ like a backup, where when ever the new data it updates teh older version is backed-up automatically]
+                : Create Multiple Buckets and store in different classes and can add permissions as well
+        
+        Types of S3 Services:
+                : Amazon S3 Static Web Site Hosting
+                : Amazon S3 Standard
+                : Amazon S3 Standard-Infrequent Access [S3 Standard-IA]
+                : Amazon S3 Glacier Flexible Retrieval [GFR]
+
+        --- Amazon S3 Standard ----
+                : When you need to access teh data frequently, then we use this service
+                : it is easy to retain the data, as multiple copies of data is stored in different Zones.
+
+        --- Amazon S3 Static Web Site Hosting ----
+                : We can have a website live with only html files adding the files to bucket with no animation.
+                        :accessing the link of the Bucket to get the website running.
+
+        --- Amazon S3 Standard-Infrequent Access [S3 Standard-IA] ----
+                : When u need to store the backup and when needed to retrieve faster we use it.
+                : when data is not used frequently and when needed can access faster retrieval.
+
+        --- Amazon S3 Glacier Flexible Retrieval [GFR] ------
+                : when u need to store data for several years and used only for retrieval purpose.
+                : if u need to store data for several years and for Rare Retrieval.
+
+                Amazon S3 Glacier Flexible Retrieval Volt Lock Policy : It has lock policy as well [WORM: write once read many]
+                : Once you lock you cannot remove the policy.
+
+        -- Amazon S3 Life Cycle Management ---
+                : Where we can move our Data to the desired tiers we need [tiers: S3 Standard, S3-IA, S3-GFR ]
+                : for teh first 90 days we can keep in S3-standard, after that we can move it to S3-IA for some 120 days, after that we can keep that in S3-GFR for low retrieval.
+        
+        
+        -- key points --
+        : Server less no need of Ec2 to launch them
+        : web enabled, [just by sharing url link of bucket up's the website]
+        : offers cost savings
+
+
+--------- Key Differences-------
+
+        : Amazon S3 standard: for faster and frequent retrieval
+
+        : Amazon S3 Standard-Infrequent Access : for faster and in-frequent retrieval 
+
+        : Amazon S3 Glacier Flexible Retrieval and Amazon S3 Glacier Deep Archive : for retrieval goes only in years of time. or 12 hours..
+
+        : Amazon S3 Intelligent-Tiering : Automatically updated from Standard to Standard-Infrequent
+
+
+--------- Key Differences-------
+
+        ----------- diff between EBS and S3--------
+        : Scenario: when there is an users upload an image and site will find the Animal images in that, 
+                : then it has to go through and the all animal matching list.   
+                : then we use S3
+
+        : Scenario: when there is an object of 4tb need to update to storage.
+                : then S3 will upload all the previous and new objects again, soo it is not suitable
+                : But EBS will upload only the new objects to the old,  called block storage, it updates only the newly added data.
+                : So here we use EBS
+
+
+--------- Amazon Elastic File System [Amazon EFS] --------------
+
+        : Here the data is stored in File System, so where the  request and retrieve of objects happens same time.
+        : It uses linux  file system
+        : auto scalable of storage for an object 
+                        [ where in s3 its 5tb, in ebs its 2tb,  they wont scale]
+        : it is a shared file system { multiple Instances } can access the data simultaneously.
+        : its an regional Resource
+
+        ----------- diff between EBS and EFS--------
+        EBS:
+           : it is connected with EC2
+           : To attach EBS to EC2, both of them should be in same availability Zone.
+           : Stores data in single availability Zone.
+           : if objects more than 2tb comes it wont auto scale.
+        EFS:
+           : Multiple Instance can access and retrieval simultaneously.
+           : Stores data in Multiple availability Zone.
+           : Regional Resource [ any Ec2 in that Region can access]
+           : if objects may be of any size it automatically Scales based on needs..
+
+
+---------- Amazon Relational DataBase System [RDS] -----------
+
+        : AWS supports [ Amazon Aurora, PostgreSQL, MYSQl, Oracle, Microsoft SQl Server, MariaDB ]
+
+        : when u move ur database to Cloud we get to manage all the migrations and below stuffs 
+                : Automated patching
+                : backups
+                : Redundancy
+                : failover
+                : Diaster Recovery
+        
+        : To Over come this AWS has its own Database
+   
+   --- Amazon Aurora -----
+                : it is also an RDBMS Database.[like MYSQL etc..]
+                : An enterprise-class relational database.
+
+        : Which manages all the above stuffs 
+        : Compatible with MySQl and PostgreSQL
+        : Data replication [ 6 copies of data is available at any time]
+        : Up to 15 read replicas [ we can upload up to 15 copies ]
+        : Continues backup from S3
+        : Point in time recovery 
+                : Good for complex Queries
+
+
+  --- Amazon DynamoDb ---
+                : it is also an No-SQL/Non-Relational Database [A key value pair]
+
+        : A serverless Database
+        : Where the data is stored as items and items have their Attributes.[key : value]
+        : Scaling od DB is done automatically.
+        : Stores in multiple availability zones.
+        : Super Faster response time.
+                : Good for less complex Queries
+        : Fully Managed 
+
+        : eg how data is stored..
+
+             Key	     Value
+
+              	        Name: John Doe
+              1         Address: 123 Any Street     
+                        Favorite drink: Medium latte
+                               
+        
+                        Name: Mary Major
+               2        Address: 100 Main Street
+                        Birthday: July 5, 1994
+        
+
+  --- Amazon Redshift ----
+                : A data Warehousing Service provided by AWS. 
+                        Data Warehousing : [eg: where the content page in book not only provides the Chapter name and page no: it also provide the summary and key points of that chapter from that and outside source books as well.]
+
+
+
+------- Amazon DataBase Migration Service [DMS] -------------
+        : To convert the database engine from one Db to another Db , use DMS.
+
+        : The Source DataBase Remains fully operational during the migrations.
+        : So Downtime is minimized.
+        : The source and target db don't have to be same type.
+
+        : Homogenous Database migrations: : As the Database Schema, data Types, Database Code are same..
+                : Can convert from SQL -> RDS SQl
+                : Can convert from PostgreSQl -> RDS PostgreSQl
+                : Can convert from Oracle -> RDS Oracle
+                        
+                steps:
+                        : A Source database can be in on-premises, or in a Ec2, on in a RDS
+                                : and target db can be in EC2 or in RDS
+                        : then start the migration task by connection source and target database.
+
+        : Heterogenous Database migrations: : As the {Database Schema, data Types, Database Code} are Different..
+
+                steps:
+                        : Here first we need to convert them using AWS {Schema Conversion tool}
+                                : which converts the Schema and Database code
+                        : then start the migration task by connection source and target database.
+                        
+                  
+                
+        Other uses of DMS :
+                : Development and test Db migrations
+                : Db consolidations
+                : Continues database replication
+
+        Development and test Db migrations
+                : A copy of production db to test for testing purpose.
+        Db consolidations
+                : When u have many db's and to merge them into single database
+        Continues db replications
+                : to store the continues backup's 
+
+  ---Amazon DocumentDB [with MangoDB compatibility]------------
+        : for more information with more attributes.[eg : Content management and catalogs]
+
+  ---Amazon Neptune ------------
+        : for social network,  fraud detection, and knowledge graphs. [like who is connected to who : linkedin facebook etc..]
+
+  ---Amazon Managed Blockchain ------------
+        : for the banking purpose.
+
+  ---Amazon Quantum Ledger Database[QLD] ------------
+        : none of teh records are deleted from it, for the ledger purpose we can sue this.
+
+  ---Amazon Accelerators ------------
+        Amazon ElastiCache:
+                : Adding caching layers on top of the Database.
+                        : which increases faster read time of common requests. 
+         Amazon DynamoDb Accelerators[DAX]:
+                : adding cache layers if you are using DynamoDb or non-relation database.
+
+                
+
