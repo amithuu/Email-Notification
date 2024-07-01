@@ -10,7 +10,7 @@ what is client -server model:
 ** what is cloud computing: The on-demand delivery of IT-resources over the internet with pay-as-you-go pricing. **
 
 
------------EC2: Amazon Elastic Cloud Compute------------
+-----------Amazon Elastic Cloud Compute [EC2]------------
 
 EC2: uses: highly flexible , cost effective quick
 
@@ -76,7 +76,6 @@ EC2 Instance Types:
     Spot Instance: here we use some spare instance, like some one used and not using now like that, 
                         catch is : if aws needs that they can re claim it when they need.[provides a 2 min warning before re-claim ]
     Dedicated Host: These are dedicated only for some usage purpose , where it cannot be shared to any one.
-
 
 
 Scalability ans Elasticity:
@@ -531,4 +530,166 @@ Lambda:
                 : adding cache layers if you are using DynamoDb or non-relation database.
 
                 
+----- Security ------------
+
+        : AWS provides a Shared Responsibility Model.
+        : It is not only keeping resources secure is only the AWS, it is US as well
+                
+        Security of cloud is taken care by AWS: 
+                        : Physical layer
+                        : Network
+                        : Hypervisor
+                         : [it checks all type of incoming traffic base don the configurations provided,,]
+        Security in cloud is taken care by US: 
+                        : Operating System
+                        : Application
+                        : Data
+                         : we need to configure which type of data and traffic need to be permitted on application.
+                         : we need to keep an eye on the vulnerabilities of OS. 
+ 
+--------User Permission and Access --------------
+
+        : As a owner i can provide  what the user can access.
+        : A {Root} user is mentioned as Owner is AWS
+                : Access and Control any resources in the account.
+                : so as we cerate Root USer account, we need to turn on MultiFactorAuthentication[MFA] 
+                : SO not only using login credentials it also adds  }Token based authentication}.
+
+        : Each user will have different access permissions, to manage this we have
+   
+   -----AWS Identity and Access Management[IAM]----------
+        : It is used to provide the access and permissions for the users.
+        : We can create IAM Users, by default there will be Zero Permissions to that account.[not even cerate instances]
+                : This is an JSON Document Policy.
+                        : EFFECT == allow/deny
+                        : ACTION  == any aws api call 
+                        : RESOURCE == what aws resource teh api call is for
+
+        Policies : As we cannot write for each user the access,we create policy 
+        IAM Group: Created Group is attached with Policy.
+                : Where in group we can add the users.
+        
+        Roles: 
+                : We can provide a Associated Permissions to users
+                : Allow or deny when ever needed
+                : Assumed for Temporary amount of time.
+                : no username and password 
+                : Access to Temporary permissions
+                : AWS Resources
+                : Users
+                : External identities
+                : Applications
+                : other AWS Services.
+  
+  ---- AWS Organizations --------
+        : A central location to manage multiple AWS accounts 
+          for   : Compliance
+                : Permission /access
+                : Security
+                : Billing
+                : Share Resources
+        
+        Main Features:
+                : Centralized Management [where we can get all the accounts details]
+                : Consolidated billing [we can use Primary account for billing and pay at once.[by combining all accounts bill]]
+                : Hierarchical groupings of accounts
+                : AWS Service and API actions access control for the each member account.[service control policies (SCPs)]
+                        
+  -- AWS Artifact ----
+        : is a service that provides AWS security and compliance reports and select online agreements.
+
+
+-------Distributed denial-of-service [DDOS]----------------
+                DDoS (Distributed Denial of Service) attack is when many computers all try to use a website at the same time, making it so busy that it can't work properly and stops. 
+                It's done on purpose to make the website go offline.
+        
+        Types of attacks:
+                UDP Flood :In this attack the amount of return data is very large
+                        :what is weather: where u will get a lot of stuffs, /so the attacker will keep on asking the same question  
+                                from which our instance will be floated with lots of data.
+
+                HTTP level attack : where the attacker keeps on asking the questions again and again.
+                        so that the normal users will not get a change to ask the request.
+
+                SlowLoris Attack : where the attacker will have a terribly slow internet connections.so that the other users will keep on waiting.
+
+
+        Solutions:  
+                UDP Flood: where we add an security level at the VPC , which casually exists the wrong responses.
+
+                SlowLoris: where we can add a {ELASTIC LOAD Balancer} which distributes the other users to the instances until the slower request entire data comes.
+
+                AWS Shield with AWS WAF[Web Application FIREWALL]: this will filter the incoming traffic with bad signatures
+                        : this is an extreme machine learning technique, to recognize the new threads and filter them from bad requests.
+
+        ---- AWS Key Management [AWS KMS] --------
+                Encryption: Securing a message or data in a way that only authorized parties can access it.
+                        : Create cryptographic keys.
+                        : when data is in ideal stage it is in format of {cryptographic}
+
+                        cases: Ideal data and in-transit data
+                
+                Ideal data: where data is kep ideal, at that time the data is kep in encrypted format.
+                        : to get that data u need the right Key to decrypt.
+                        : that key is given by KMS.
+
+                in-transit data: where the data is transferring from server to the client. 
+                        : we use SSL[secure sockets layer [ssl] ] for teh transmission, 
+                        : until the client machine is certified data will not be transferred
+
+        --- Amazon Inspector ---
+                : it is used to check the security of that deployed application by running as automated security assessment.           
+           which checks :
+                        Network configuration or deviation is network.
+                        Amazon agent 
+                        Security assessment service [which has all the above 2 services in it]
+
+
+        --- Amazon GuardDuty ---
+                : it is an service which runs outside the application.
+                : it uses integrated threat intelligence, nan-malicious IP address,anomalies detection, machine learning to find out the threads.
+
+
+---- MONITORING AND ANALYSIS ----------- 
+                : monitoring ths resource are working as required or not..
+        
+  ---- AMAZON CLOUDWATCH ----
+                
+                : monitoring the matrix and resources in live time.
+                        METRICS : Variables tied to your resources.
+                
+        CLOUDWATCH ALARM:
+                : we can keep an threshold for the warning.
+                   : so we get an alarm when the service reaches that threshold.
+                : It is integrated with SNS as well, so we can send sms.
+        
+        CLOUDWATCH DASHBOARD:
+                : where in this dashboard we get to watch all the metrics of all our resources in real time.
+        
+        benefits:
+                : Access all our metrics form a central location
+                : Gain visibility into the applications, infrastructure and services.
+                : Reduce mean time to resolution and improve total cost of ownership.
+                : Drive insights to optimize the application and operational resources.
+
+  ---- AMAZON CLOUDTRAIL ------
+
+                : A Comprehension Auditing api tool.
+                : Gets all the information of who what and when anything is changed in security or any aspects.
+                : Events are typically updated in CloudTrail within 15 minutes after an API call
+
+
+  ---- AMAZON TRUSTED ADVISOR ------
+
+                : This is a service which runs like a health check and gets the alerts or suggestions what changes needed to make.
+        
+        some factors it checks
+                : Cost Optimization
+                : Performance
+                : Security
+                : Fault Tolerance
+                : Service limits
+
+        : it has messages service as well, which reminds you when it runs.
+
 

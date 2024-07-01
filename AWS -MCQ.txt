@@ -142,3 +142,69 @@ Which service is used to query and analyze data across a data warehouse?
     ans: Amazon Redshift
 
 
+Which tasks are the responsibilities of customers? (Select TWO.)
+    ans: Patching software on Amazon EC2 instances
+         Setting permissions for Amazon S3 objects
+
+
+Which tasks are the responsibilities of AWS?
+    ans: Maintaining network infrastructure
+         Implementing physical security controls at data centers
+         Maintaining servers that run Amazon EC2 instances
+
+
+You are configuring service control policies (SCPs) in AWS Organizations. Which identities and resources can SCPs be applied to? (Select TWO.)
+    ans: An individual member account
+         An organizational unit (OU)
+
+
+Which tasks can you complete in AWS Artifact? (Select TWO.)
+    ans: Access AWS compliance reports on-demand.
+         Review, accept, and manage agreements with AWS.
+
+
+Which statement best describes an IAM policy?
+    ans: A document that grants or denies permissions to AWS services and resources
+
+
+An employee requires temporary access to create several Amazon S3 buckets. Which option would be the best choice for this task?
+    ans: IAM Role
+
+
+Which statement best describes the principle of least privilege?
+    ans: Granting only the permissions that are needed to perform specific tasks
+
+
+Which service helps protect your applications against distributed denial-of-service (DDoS) attacks?
+    ans: AWS Shield and WAF
+
+
+Which task can AWS Key Management Service (AWS KMS) perform?
+    ans: Create cryptographic keys.
+
+
+Which tasks can you perform using AWS CloudTrail? (Select TWO.)
+    ans: Track user activities and API requests throughout your AWS infrastructure
+         Filter logs to assist with operational analysis and troubleshooting
+
+
+Which tasks can you perform using AWS CLOUDWATCH? 
+    ans: Monitor your AWS infrastructure and resources in real time
+         View metrics and graphs to monitor the performance of resources
+         Configure automatic actions and alerts in response to metrics
+
+
+Which actions can you perform using Amazon CloudWatch? (Select TWO.)
+    ans: Monitor your resources’ utilization and performance
+         Access metrics from a single dashboard
+
+
+Which service enables you to review the security of your Amazon S3 buckets by checking for open access permissions?
+    ans: AWS Trusted Advisor
+
+
+Which categories are included in the AWS Trusted Advisor dashboard? (Select TWO.)
+    ans: Performance and Fault tolerance
+
+
+
