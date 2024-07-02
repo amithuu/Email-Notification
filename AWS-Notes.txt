@@ -693,3 +693,236 @@ Lambda:
         : it has messages service as well, which reminds you when it runs.
 
 
+------ Pricing and Support ---------
+        
+  -- AWS FREE TIER --- 
+                : always free
+                : 12 months free
+                : up to 5gb free in S3 for 12 months
+                : Trails [ some services offer a short term free trial]
+        
+        Some Key services comes under is 
+                : Amazon SageMaker
+                : Amazon Comprehend Medical
+                : Amazon DynamoDb
+                : Amazon SNS
+                : Amazon Cognito
+
+  -- Pricing Concepts --
+        : Pay for what you use
+        : Pay less when you reserve
+        : Pay less with volume-based discounts when you use more
+
+  -- Pricing Calculators --
+        : Create an estimate for the cost of your use cases on AWS 
+        : The AWS Pricing Calculator(opens in a new tab) lets you explore AWS services and create an estimate for the cost of your use cases on AWS.
+
+  -- Consolidated Billing --
+        : Simplifies billing process [ can pay bill from primary account] 
+                        [a feature of AWS Organization service.]
+        : Share savings across accounts [u will get bulk discount for paying]
+        : free to use 
+
+  -- AWS Budgets --
+        : Review how much cost your predicted AWS usage will incur by the end of the month
+        : Keeping a Threshold for the Cost or any usage on resources and getting notified when it reaches that limit.
+
+  -- AWS Cost Explorer --
+        : Visualize and manage your AWS costs and usage over time
+        : Keeps track of cost and services we have used and we can get teh reports as well.
+        : allows you to visually see and analyze how you are spending money with AWS
+        : It will show you which services you are spending the most money on, and it gives you 12 months of historical data.
+
+
+    Some of the Support plans are there
+        : AWS Basic Support
+        : AWS Developer Support
+        : AWS Business Support
+        : AWS Enterprise On-Ramp Support:
+        : AWS Enterprise Support
+
+
+  -- AWS Basic Plan --
+        : 24/7 customer service
+        : Documentation
+        : White papers
+        : Support forums
+        : AWS Trusted Advisor
+        : AWS Personal Health Dashboard
+
+   AWS Developer Support:
+        : All Basic Support
+        : Email Access to customer support with 24 hour response time.
+        : responses are less than 12 hours if system are impaired.
+
+  AWS Business Support:
+        : All Basic Support
+        : AWS Trusted Advisor with all the full checkup.
+        : Direct Phone access to cloud support engineers
+        : 4 hours of response time if production system is impaired and 1 hour response time when production system is down.
+        : infrastructure Event management. [advertising features or like events.]
+  
+  AWS Enterprise On-Ramp Support:
+        : All Basic, Developer, Business support
+        : 30 min of response time for business critical workloads
+        : Access to a pool of Technical Account Managers [TAMs]
+                TAMs: they provide pro-active guidance and Optimization.
+  
+  AWS Enterprise Support:
+        : All Basic, Developer, Business support
+        : 15 min of response time for business critical workloads
+        : Designated Technical Account Manager [TAMs]
+
+  TAMs: They work on 6 pillars of teh Well-Architected Framework
+        : Operational Excellence
+        : Security
+        : Reliability
+        : Performance Efficiency
+        : Cost Optimization
+        : Sustainability
+
+  -- AWS MarketPlace --
+                "basically it is like we have service and providing to others"[we are aws providers now, or service providers]"
+
+        : Service or resource is used to find third-party software that runs on AWS
+        : It is a curated Digital catalog,that streamline and deploy your 3rd party applications that running on AWS infrastructure.
+
+    One click Deployment: The customers can come and deploy their 3rd party applications in a pirated time.
+    
+    Pay as you go pricing : you can charge the vendors when only they use, and providing some free tier options. 
+
+        Enterprise Focused feature:
+                : Custom terms and pricing
+                : A private marketplace [where u can have agreement for having a some softwares]
+                : Integration into your procurement systems.
+                : Cost management tools.
+        
+----- Migration and Innovation ------
+        
+        : If you want to migrate your applications to the cloud AWS services, you do migrations.
+  
+  -- AWS Cloud Adoption Framework [AWS CAF]:
+                : it helps in migrating your application to cloud.
+
+        : A group of people will Guide you to migrate the application.
+        : Everyone cannot do this it needs a lot of knowledge and experience.
+
+        It is divided into 6 perspectives to migrate.
+                : Business
+                : People
+                : Governance {all 3 will look into business perspectives}
+                : Platform
+                : Security
+                : Operations { all 3 will look int the technical perspectives}
+
+        AWS CAF Action Plan
+                : A action plan which guide your organization for cloud organization.
+
+        Business Perspective: helps you to move from a model that separates business and IT strategies into a business model that integrates IT strategy.
+        People Perspective: helps Human Resources (HR) employees prepare their teams for cloud adoption by updating organizational processes and staff skills to include cloud-based competencies.
+        Governance Perspective : helps you to identify and implement best practices for IT governance and support business processes with technology.
+        Platform Perspective: helps you design, implement, and optimize your AWS infrastructure based on your business goals and perspectives.
+        Security Perspective: helps you structure the selection and implementation of permissions
+        Operations Perspective: focuses on operating and recovering IT workloads to meet the requirements of your business stakeholders.
+
+
+  -- Migration Strategy 6 R's---
+        
+        There are 6 main migration strategies.
+                : ReHosting
+                : RePlatform
+                : Retire
+                : Retain
+                : RePurchasing
+                : ReFactoring
+
+        ReHosting : Called as lift and shift.
+                : Move our application from old to AWS service.[no need to make any changes.]
+                : u may not get all the benefits , but base don preview many got Cost cutting of 20%.
+
+        RePlatforming: Called as lift tinker and shift.
+                : involves selectively optimizing aspects of an application to achieve benefits in the cloud without changing the core architecture of the application.
+
+                : migrating from one platform to AWS RDS
+                : eg: MySQL to RDS MYSQL or upgrading to AWS Aurora
+                : which significantly increases performance.
+
+        
+        Retire: Shutting down the un-used resources
+                : involves removing an application that is no longer used or that can be turned off.
+        
+        Retain: Restarting the old resources.
+                : use only when the resources needed, until keep it somewhere
+        
+        RePurchasing:  moving to New cloud 
+                : involves replacing an existing application with a cloud-based version, such as software found in AWS Marketplace
+
+                : Thinking i your old crm or cloud based contract is Ended
+                : And you took the new cloud, which provides new software,
+                : Installing new software might become easy or tough. 
+        
+        ReFactoring: New code
+                : involves changing how an application is architected and developed, typically by using cloud-native features.
+
+                : Adding new features to the product might optimize your infrastructure.
+
+  -- AWS SNOW FAMILY --
+        
+        : To move data into the AWS, we have some services,
+        : if you try to do it [ A network with 1gb speed moves 1Pb of data for 100 days ]
+
+                AWS SNOWCONE
+                AWS SNOWBALL EDGE
+                AWS SNOWMOBILE
+        
+
+        AWS SNOWCONE : [8TB storage device] 
+                : It is a Tiny small Device for Data transfer. [can hold up to 8TB of data]
+
+                :AWS Snowcone is a small, rugged, and secure edge computing [EC2 or IOT] and data transfer device by Amazon Web Services (AWS). 
+                        It's designed to collect, process, and move data to AWS, even in remote or harsh environments.
+
+                : if you want to transfer data from your local storage to AWS Server or main Data Centre, you can use this.
+                : you can transfer data thought internet or u can ship it directly to data centre. 
+                eg: analytics data and more.
+
+        
+        AWS SNOWBALL EDGE: [data transfer and compute organized device] [ can hold up to 80TB of data]
+                : Used to transfer large amount of data securely and efficiently to and from AWS.
+                : even using this we can do some computing tasks as well [like image compression, video transcoding ]
+        
+
+        AWS SNOWMOBILE : A data transfer Truck teh largest one. [can hold up tp 1,00,000 TB]
+                : it has a capacity of 100 PB storage 
+                : it is used for transfer of data from Data centre when they shutdown.
+        
+        
+        * all the data while transferring will be cryptographic encrypted 
+        * we cna use KMS encryption as well.
+
+  --- Innovation with AWS --- 
+        
+        These are the services which are useful for building machine learning models or iot devices etc..
+
+        -- Amazon SageMaker: 
+                : Build , train, deploy machine learning models  
+                : Our build custom models with all Open Source Framework.
+                : with high compute and security 
+        
+        -- Amazon Augmented AI (Amazon A2I):
+                : can build ML projects without having any PHD level skill.
+        
+        -- Amazon Lex:
+                : which helps you to build interactive chat bots.
+        
+        -- Amazon Textract :
+                : which is used to extract text from doc and make it more useful for enterprise.
+
+        -- Amazon Deep Racer:
+                : made for developers to experiment with Reinforcement learning.
+
+        -- Amazon Ground Station:
+                : setting up your own Satellite
+                : pay only when you use.
+
+

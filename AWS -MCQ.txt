@@ -207,4 +207,65 @@ Which categories are included in the AWS Trusted Advisor dashboard? (Select TWO.
     ans: Performance and Fault tolerance
 
 
+The AWS Free Tier includes offers that are available to new AWS customers for a certain period of time following their AWS sign-up date. What is the duration of this period?
+    ans: 12 months
 
+
+Which Support plan includes all AWS Trusted Advisor checks at the lowest cost?
+    ans: Business
+
+
+Which action can you perform with consolidated billing? 
+    ans: Combine usage across accounts to receive volume pricing discounts.
+
+
+Which pricing tool is used to visualize, understand, and manage your AWS costs and usage over time?
+    ans: AWS Cost Explorer
+
+
+Which pricing tool enables you to receive alerts when your service usage exceeds a threshold that you have defined?
+    ans: AWS Budgets
+
+
+Your company wants to receive support from an AWS Technical Account Manager (TAM). Which support plan should you choose?
+    ans: Enterprise [dedicated] 
+
+
+Your company wants to receive support from an pool of AWS Technical Account Manager (TAM). Which support plan should you choose?
+    ans: Business [pool]
+
+
+Which service or resource is used to find third-party software that runs on AWS?
+    ans: AWS Marketplace
+
+
+Which Perspective of the AWS Cloud Adoption Framework helps you design, implement, and optimize your AWS infrastructure based on your business goals and perspectives?
+    ans: Platform Perspective
+
+
+Which migration strategy involves moving to a different product?
+    ans: Repurchasing
+
+
+What is the storage capacity of Snowball Edge Storage Optimized?
+    ans: 80 TB
+
+
+Which service enables you to quickly build, train, and deploy machine learning models?
+    ans: Amazon SageMaker
+
+
+Which Perspective of the AWS Cloud Adoption Framework helps you structure the selection and implementation of permissions?
+    ans: Security Perspective
+
+
+Which strategies are included in the six strategies for application migration? (Select TWO.)
+    ans: Retaining and Rehosting
+
+
+What is the storage capacity of AWS Snowmobile?
+    ans: 100PB or 100000TB
+
+
+Which statement best describes Amazon Lex?
+    ans: 
