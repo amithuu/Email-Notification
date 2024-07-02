@@ -781,7 +781,7 @@ Lambda:
         : Cost Optimization
         : Sustainability
 
-  -- AWS MarketPlace --
+------ AWS MarketPlace -------
                 "basically it is like we have service and providing to others"[we are aws providers now, or service providers]"
 
         : Service or resource is used to find third-party software that runs on AWS
@@ -857,7 +857,7 @@ Lambda:
         RePurchasing:  moving to New cloud 
                 : involves replacing an existing application with a cloud-based version, such as software found in AWS Marketplace
 
-                : Thinking i your old crm or cloud based contract is Ended
+                : Think as your old crm or cloud based contract is Ended
                 : And you took the new cloud, which provides new software,
                 : Installing new software might become easy or tough. 
         
@@ -892,13 +892,13 @@ Lambda:
                 : even using this we can do some computing tasks as well [like image compression, video transcoding ]
         
 
-        AWS SNOWMOBILE : A data transfer Truck teh largest one. [can hold up tp 1,00,000 TB]
+        AWS SNOWMOBILE : A data transfer Truck the largest one. [can hold up tp 1,00,000 TB]
                 : it has a capacity of 100 PB storage 
                 : it is used for transfer of data from Data centre when they shutdown.
-        
+                : 24/7 security, dedicated guards,CCTV surveillance
         
         * all the data while transferring will be cryptographic encrypted 
-        * we cna use KMS encryption as well.
+        * we can use KMS encryption as well.
 
   --- Innovation with AWS --- 
         
