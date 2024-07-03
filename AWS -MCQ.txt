@@ -268,4 +268,13 @@ What is the storage capacity of AWS Snowmobile?
 
 
 Which statement best describes Amazon Lex?
-    ans: 
+    ans: for chat bot services and voice services
+
+
+Which pillar of the AWS Well-Architected Framework includes the ability to run workloads effectively and gain insights into their operations?
+    ans: Operational Excellence
+
+
+What are the benefits of cloud computing? (Select TWO.)
+    ans: Increase speed and agility.
+         Stop spending money running and maintaining data centers.

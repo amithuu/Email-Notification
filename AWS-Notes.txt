@@ -12,147 +12,147 @@ what is client -server model:
 
 -----------Amazon Elastic Cloud Compute [EC2]------------
 
-EC2: uses: highly flexible , cost effective quick
+        EC2: uses: highly flexible , cost effective quick
 
-EC2 runs on a physical machine with the virtualization technology.
+        EC2 runs on a physical machine with the virtualization technology.
 
-Multitenancy :Sharing underlying hardware between virtual machines.
-
-
-Vertical Scaling: Where in here we can increase or decrease the size and no of CPUs as we needed.
+        Multitenancy :Sharing underlying hardware between virtual machines.
 
 
-Types of instances available:
-
-        [Caas: Compute as a Service.]
-
-EC2 Instance Families:
-        : General Purpose
-        : Compute Optimized 
-        : Memory Optimized
-        : Accelerated computing
-        : Storage Optimized
+        Vertical Scaling: Where in here we can increase or decrease the size and no of CPUs as we needed.
 
 
-General Purpose: [balance of compute, memory, and networking resources]
-                                    : it has Balanced resources
-                                    : Diverse workloads
-use it for deploying or storing     : Web servers
-                                    : Code repository
+        Types of instances available:
 
-Compute Optimized: [which uses batch processing workload]
-        : Compute intensive tasks
-        : Gaming servers
-        : high performance computing
-        : Scientific modeling
+                [Caas: Compute as a Service.]
 
-Memory Optimized : [workloads that process large datasets in memory, such as high-performance databases.]
-        : Memory Intensive tasks
-
-Accelerated computing: 
-        : Floating point number calculations
-        : Graphics processing
-        : data pattern matching
-        : utilize hardware accelerators
-
-Storage Optimized:[workloads that require high, sequential read and write access to large datasets on local storage.]
-        : High performance for locally stored data
+        EC2 Instance Families:
+                : General Purpose
+                : Compute Optimized 
+                : Memory Optimized
+                : Accelerated computing
+                : Storage Optimized
 
 
-EC2 Instance Types:
-        :on-demand
-        :Savings plan
-        :Reserved instances
-        :Spot instances
-        :Dedicated hosts
-    
-    on-Demand:  only pay for the duration that your instance runs for
-    Savings plan: offers low prices on EC2 usage in exchange for a commitment to a consistent amount of usage measured in dollars per hour for a one or three-year term.
-            [ telling them i will use instance for some years i need to them to costs only for this much dollar.]
-    Reserved Instance: here we will reserve the instance for some years, where we can pay , 
-                            :when we commit for years on it and pay fully.
-                            :when we use we pay for it.
-                            :no pay at the beginning.
-    Spot Instance: here we use some spare instance, like some one used and not using now like that, 
-                        catch is : if aws needs that they can re claim it when they need.[provides a 2 min warning before re-claim ]
-    Dedicated Host: These are dedicated only for some usage purpose , where it cannot be shared to any one.
+        General Purpose: [balance of compute, memory, and networking resources]
+                                        : it has Balanced resources
+                                        : Diverse workloads
+        use it for deploying or storing     : Web servers
+                                        : Code repository
+
+        Compute Optimized: [which uses batch processing workload]
+                : Compute intensive tasks
+                : Gaming servers
+                : high performance computing
+                : Scientific modeling
+
+        Memory Optimized : [workloads that process large datasets in memory, such as high-performance databases.]
+                : Memory Intensive tasks
+
+        Accelerated computing: 
+                : Floating point number calculations
+                : Graphics processing
+                : data pattern matching
+                : utilize hardware accelerators
+
+        Storage Optimized:[workloads that require high, sequential read and write access to large datasets on local storage.]
+                : High performance for locally stored data
 
 
-Scalability ans Elasticity:
-    This tells how capacity as grow ans shrink based on business needs
-    
-Amazon EC2 Auto Scaling: which increases the number of resources needed for the time and degrades the resources we not in needed.
+        EC2 Instance Types:
+                :on-demand
+                :Savings plan
+                :Reserved instances
+                :Spot instances
+                :Dedicated hosts
+        
+        on-Demand:  only pay for the duration that your instance runs for
+        Savings plan: offers low prices on EC2 usage in exchange for a commitment to a consistent amount of usage measured in dollars per hour for a one or three-year term.
+                [ telling them i will use instance for some years i need to them to costs only for this much dollar.]
+        Reserved Instance: here we will reserve the instance for some years, where we can pay , 
+                                :when we commit for years on it and pay fully.
+                                :when we use we pay for it.
+                                :no pay at the beginning.
+        Spot Instance: here we use some spare instance, like some one used and not using now like that, 
+                                catch is : if aws needs that they can re claim it when they need.[provides a 2 min warning before re-claim ]
+        Dedicated Host: These are dedicated only for some usage purpose , where it cannot be shared to any one.
+
+
+        Scalability ans Elasticity:
+        This tells how capacity as grow ans shrink based on business needs
+        
+        Amazon EC2 Auto Scaling: which increases the number of resources needed for the time and degrades the resources we not in needed.
 
 ----------Amazon Elastic Load Balancing--------------
 
-Network Balancing: When there is an increase in requests but all the request are hitting the same instance, although we have multiple instances 
-            : to solve this we have host which diverts the requests to the ideal instance based on their no of request they are holing.
+        Network Balancing: When there is an increase in requests but all the request are hitting the same instance, although we have multiple instances 
+                : to solve this we have host which diverts the requests to the ideal instance based on their no of request they are holing.
 
-    ["Load Balancing" :  Ensuring that no single Amazon EC2 instance has to carry the full workload on its own.]
+        ["Load Balancing" :  Ensuring that no single Amazon EC2 instance has to carry the full workload on its own.]
 
-Elastic Load Balancing: service that automatically distributes incoming application traffic across multiple resources, such as Amazon EC2 instances. 
+        Elastic Load Balancing: service that automatically distributes incoming application traffic across multiple resources, such as Amazon EC2 instances. 
 
-        : an load balancer acts as single point to contact to all the incoming traffic from which it spreads across the multiple instances and loads which have less traffic..
+                : an load balancer acts as single point to contact to all the incoming traffic from which it spreads across the multiple instances and loads which have less traffic..
 
 
 --------- Amazon SQS [simple Queue Services] ---------------------
 
-messaging Queue: The basic idea behind this is 
-                when there are 2 applications if one sends request to another, if both are available then looks good,
-                if any one of those fails, then both of the applications fails[ this is called tightly coupled.]
+        messaging Queue: The basic idea behind this is 
+                        when there are 2 applications if one sends request to another, if both are available then looks good,
+                        if any one of those fails, then both of the applications fails[ this is called tightly coupled.]
 
 
-    SQS: To solve this we use SQS[lightly coupled] , where when a request is send from the client it stores in {sqs queue} and sends to to server and gets the response
-                : if server fail then , until the server is {up and running} the requests are being {queued in sqs}
+        SQS: To solve this we use SQS[lightly coupled] , where when a request is send from the client it stores in {sqs queue} and sends to to server and gets the response
+                        : if server fail then , until the server is {up and running} the requests are being {queued in sqs}
 
-    SQS: it send messages and store messages in queue and receive messages between software components at any volume, without loosing any messages.
+        SQS: it send messages and store messages in queue and receive messages between software components at any volume, without loosing any messages.
 
-    payload: Data contained within a message   [eg: a toy box with lots of toys, here the important data is toys inside the toy box soo, {message:toy box}{data: lots of toys} ] 
+        payload: Data contained within a message   [eg: a toy box with lots of toys, here the important data is toys inside the toy box soo, {message:toy box}{data: lots of toys} ] 
 
 
 ----------- Amazon SNS [Simple Notification Service]-------------
 
-    SNS: its an channel for messages to be delivered.
-        : this can be { text message or a mobile push notification or an email message }
+        SNS: its an channel for messages to be delivered.
+                : this can be { text message or a mobile push notification or an email message }
 
 
 ---------Server Less Servers------------
 
-------Lambda: where you upload your code to the server and no need for managing anything, as you do in EC2..
+        ------Lambda: where you upload your code to the server and no need for managing anything, as you do in EC2..
 
-    Docker: if you are using docker's in EC2, then u need to manage the configuration's.
+        Docker: if you are using docker's in EC2, then u need to manage the configuration's.
 
----------Amazon EKS[ Elastic kubernetes Services ] or ECS[ Elastic Container Services ] --------
-        EKS or ECS: Which run's the docker services.
+        ---------Amazon EKS[ Elastic kubernetes Services ] or ECS[ Elastic Container Services ] --------
+                EKS or ECS: Which run's the docker services.
 
-        AWS Fargate: Where its a serverless service that manages all teh configurations for teh docker services..
+                AWS Fargate: Where its a serverless service that manages all teh configurations for teh docker services..
 
 
--------------- Key Differences ----------------
+        -------------- Key Differences ----------------
 
-EC2:
-    : If you need to host traditional applications.
-    : If needed full access on OS and configurations.
+        EC2:
+        : If you need to host traditional applications.
+        : If needed full access on OS and configurations.
 
-Docker:
-    : If you want to run docker or kubernetes based workloads on AWS [containers==dockers or kubernetes]
-        : it has 2 tools EKS or ECS services to manage the containers
-                : docker == ECS
-                : kubernetes == EKS
+        Docker:
+        : If you want to run docker or kubernetes based workloads on AWS [containers==dockers or kubernetes]
+                : it has 2 tools EKS or ECS services to manage the containers
+                        : docker == ECS
+                        : kubernetes == EKS
 
-    : Then u need to choose platform that you want to run the containers on 
-        : On EC2 which you need to manage the configurations.
-        : On Fargate which is managed by AWS, a serverless Application.
+        : Then u need to choose platform that you want to run the containers on 
+                : On EC2 which you need to manage the configurations.
+                : On Fargate which is managed by AWS, a serverless Application.
 
-Lambda:
-    : if you need to run service oriented applications or event driven applications.
-    : And you don't need any access on the configurations on managing servers.
-    : Then use Lambda
+        Lambda:
+        : if you need to run service oriented applications or event driven applications.
+        : And you don't need any access on the configurations on managing servers.
+        : Then use Lambda
 
-    : if you just need to focus on code and when ever the code runs or http request is triggered then u need to pay.
-    : No need of managing anything [ no instances no containers ]
+        : if you just need to focus on code and when ever the code runs or http request is triggered then u need to pay.
+        : No need of managing anything [ no instances no containers ]
 
--------------- Key Differences ----------------
+        -------------- Key Differences ----------------
 
 
 
@@ -179,14 +179,14 @@ Lambda:
 
         {Regions: In a Single Region we will have any availability Zones, where if one fails we can access the other Zone.}
 
- ----Amazon CloudFront [CDS] [Content delivery Network]------
+  ----Amazon CloudFront [CDS] [Content delivery Network]------
         : this uses Edge location service.
 
         : Keeping an cache or backup data in the near by Centre if your Main centre is Far Away.
                 eg:[if your centre is in Tokyo, and some of your customers are in Mumbai, 
                         :then building a cache copy in mumbai for accessing and sending data with low latency and hight transfer speed ]
 
--------- Amazon Outpost------------
+  -------- Amazon Outpost------------
         : If you need the data centre to be build inside our office, then you use Outpost Service.
 
 
@@ -239,11 +239,11 @@ Lambda:
         : this allows you to connect direct {Fibre connection from your Data centre --> AWS} 
 
 
----------SUBNET----------
+  ---------SUBNET----------
 
         SUBNET: A Instance which is inside VPC, it might br Private or Public.
 
--------- Network Hardening----------
+  -------- Network Hardening----------
 
         The only reason to use Subnets inside the VPC is To control the access.
 
@@ -265,7 +265,7 @@ Lambda:
                 Security Group will check whether the packet has the permission to enter the instance or not. 
         
 
----------Key Differences------
+  ---------Key Differences------
 
         ACL: check while coming in and going out 
                 : Acts as security for subnet
@@ -291,7 +291,7 @@ Lambda:
                         : then it tries to go inside i1, where i1 security group will check for incoming, if approved
                                 : then response is received.
 
----------Key Differences------
+  ---------Key Differences------
 
 
 ---------- Amazon Route 53 -----------
@@ -547,7 +547,7 @@ Lambda:
                          : we need to configure which type of data and traffic need to be permitted on application.
                          : we need to keep an eye on the vulnerabilities of OS. 
  
---------User Permission and Access --------------
+  --------User Permission and Access --------------
 
         : As a owner i can provide  what the user can access.
         : A {Root} user is mentioned as Owner is AWS
@@ -595,11 +595,11 @@ Lambda:
                 : Hierarchical groupings of accounts
                 : AWS Service and API actions access control for the each member account.[service control policies (SCPs)]
                         
-  -- AWS Artifact ----
+  ---- AWS Artifact ----
         : is a service that provides AWS security and compliance reports and select online agreements.
 
 
--------Distributed denial-of-service [DDOS]----------------
+  -------Distributed denial-of-service [DDOS]----------------
                 DDoS (Distributed Denial of Service) attack is when many computers all try to use a website at the same time, making it so busy that it can't work properly and stops. 
                 It's done on purpose to make the website go offline.
         
@@ -615,7 +615,7 @@ Lambda:
 
 
         Solutions:  
-                UDP Flood: where we add an security level at the VPC , which casually exists the wrong responses.
+                UDP Flood: where we add an security level at the VPC [Network ACL], which casually exists the wrong responses.
 
                 SlowLoris: where we can add a {ELASTIC LOAD Balancer} which distributes the other users to the instances until the slower request entire data comes.
 
@@ -774,12 +774,12 @@ Lambda:
         : Designated Technical Account Manager [TAMs]
 
   TAMs: They work on 6 pillars of teh Well-Architected Framework
-        : Operational Excellence
-        : Security
-        : Reliability
-        : Performance Efficiency
         : Cost Optimization
+        : Performance Efficiency
+        : Security
         : Sustainability
+        : Reliability
+        : Operational Excellence
 
 ------ AWS MarketPlace -------
                 "basically it is like we have service and providing to others"[we are aws providers now, or service providers]"
@@ -926,3 +926,64 @@ Lambda:
                 : pay only when you use.
 
 
+-------- The Cloud Journey -------------
+                
+  --- AWS Well-Architected Framework ---
+        : This is a tool we you use for excellence in few different categories.
+                : Cost Optimization
+                : Performance
+                : Security
+                : Sustainability
+                : Reliability
+                : Operational Excellence 
+        
+        Cost optimization : the ability to run systems to deliver business value at the lowest price point. 
+        Performance efficiency : the ability to use computing resources efficiently to meet system requirements and to maintain that efficiency as demand changes and technologies evolve. 
+        Security : is the ability to protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies. 
+        Sustainability: Understand your impact and Establish sustainability goals and Maximize utilization
+        Reliability : Recover from infrastructure or service disruptions and ability of a workload to consistently and correctly perform its intended functions
+        Operational Excellence : the ability to run and monitor systems to deliver business value and to continually improve supporting processes and procedures.  
+
+
+  --- AWS Well-Architected Tool ---
+        : Which helps in finding the above categories on resource use.
+
+
+
+-------- The main 6 Advantages of using AWS ---------------
+
+        : Trade upfront expense for variable expense 
+        : Benefit from massive economies of scale.
+        : Stop guessing capacity
+        : Increase speed and agility
+        : Stop spending money running and maintaining data centers
+        : Go global in minutes
+
+
+
+        Trade upfront expense for variable expense 
+                        : expenses include data centers, physical servers, and other resources that you would need to invest in before using computing resources. 
+                        : taking them for permanent and paying.
+                        : Instead pay only when u use.
+        
+        Benefit from massive economies of scale.
+                        : As AWS only buying hardware and maintaining those in more volumes, they get in less cost
+                        : Instead of having our own we can achieve a lower variable cost.
+                        : Receiving lower pay-as-you-go prices as the result of AWS customers’ aggregated usage of services
+        
+        Stop guessing capacity
+                        : U don't need to guess the size of db or capacity of infrastructure which may lead to more usage or very less usage.
+                        : which leads to loss od money
+                        : instead by Auto scaling and pay when u use.
+
+        Increase speed and agility
+                        : Instead of taking centers to permanent and pay all the time
+                        : This flexibility also provides your development teams with more time to experiment and innovate.
+                        : where u get the flexibility for free tier services to experience and innovate
+
+        Stop spending money running and maintaining data centers
+                        : If you have on-premiss data centers u need to maintain all the power, staff some other as well
+                        : Instead if u choose AWS no need of focusing on all those things.
+        
+        Go global in minutes
+                        :  enables you to quickly deploy applications to customers around the world, while providing them with low latency.
